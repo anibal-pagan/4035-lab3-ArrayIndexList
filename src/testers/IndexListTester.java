@@ -90,7 +90,12 @@ public class IndexListTester {
 		for (int i=0; i< lpindex; i++)
 		    showElement(list,i); 
 		
+<<<<<<< HEAD
 		System.out.println("\n The capacity of the list is " + list.capacity() + "\n"); 
+=======
+		// remove comment characters on the next line to work on Exercise 2
+//		System.out.println("\n The capacity of the list is " + list.capacity() + "\n"); 
+>>>>>>> 2102298d4634c0f45ea5e54615040d2f403faf42
 	}
 	
 	private static void showListAfterDeleting(IndexList<Integer> list, int pos) { 

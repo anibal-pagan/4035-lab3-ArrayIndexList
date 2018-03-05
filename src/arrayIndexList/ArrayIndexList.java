@@ -1,7 +1,5 @@
 package arrayIndexList;
 
-import java.util.Arrays;
-
 import indexList.IndexList;
 
 public class ArrayIndexList<E> implements IndexList<E> {

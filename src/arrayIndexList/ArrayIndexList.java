@@ -116,8 +116,7 @@ public class ArrayIndexList<E> implements IndexList<E> {
 
 	@Override
 	public int capacity() {
-		// TODO Auto-generated method stub
-		return 0;
+		return element.length;
 	}
 
 }

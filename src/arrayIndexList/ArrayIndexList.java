@@ -1,5 +1,7 @@
 package arrayIndexList;
 
+import java.lang.reflect.Array;
+
 import indexList.IndexList;
 
 public class ArrayIndexList<E> implements IndexList<E> {
@@ -104,7 +106,7 @@ public class ArrayIndexList<E> implements IndexList<E> {
 	public Object[] toArray() {
 		Object[] newArray = new Object[this.size];
 		for(int i=0; i<this.size; i++){
-			newArray[i] = this.get(i);
+			newArray[i] = element[i];
 		}
 		return newArray;
 	}
@@ -112,9 +114,16 @@ public class ArrayIndexList<E> implements IndexList<E> {
 
 	@Override
 	public <T1> T1[] toArray(T1[] array) {
-		//doesn't work
-		for(int i=0; i<this.size; i++){
-			array[i] = (T1) this.get(i);
+		if(array.length < size){
+			array = (T1[]) Array.newInstance(array.getClass().getComponentType(), size);
+		}
+		else if(array.length>size){
+			for(int j=size; j<array.length;j++){
+				array[j] = null;
+			}
+		}
+		for(int i=0; i<size; i++){
+			array[i] = (T1) element[i];
 		}
 		return array;
 	}
